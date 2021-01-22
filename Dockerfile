@@ -12,3 +12,4 @@ RUN tlmgr update --self \
                   enumitem
 
 COPY ./src /opt
+COPY ./assets /opt/assets
