@@ -116,4 +116,4 @@
 %--------------------------------
 % CUSTOME COMMANDS
 %--------------------------------
-\IfFileExists{sources/style.sty}{\RequirePackage{sources/style}}{}
+\IfFileExists{/opt/style.sty}{\RequirePackage{/opt/style}}{}
