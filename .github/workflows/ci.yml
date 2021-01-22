@@ -31,7 +31,7 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/test:/data" ghcr.io/LeoColomb/.docs "/data/Fixture.md" \
+          docker run --rm -v "${PWD}/test:/data" ghcr.io/${{ secrets.DOCKER_IMAGE }} "/data/Fixture.md" \
             --output "/data/Output.pdf" \
             --variable title="Fixture" \
             --variable id="Id" \

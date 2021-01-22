@@ -12,7 +12,7 @@
 ### Run
 
 ```shell
-docker run --rm -v "${PWD}:/data" ghcr.io/LeoColomb/.docs "/data/[file].md" \
+docker run --rm -v "${PWD}:/data" ghcr.io/LeoColomb/dotdocs "/data/[file].md" \
   --output "/data/[file].pdf" \
   --variable title="[type]" \
   --variable id="[id of type]" \
