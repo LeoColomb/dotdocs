@@ -33,7 +33,7 @@
 
 % Custom fint
 \setsansfont{SourceSansPro}[
-  Path = assets/fonts/,
+  Path = /opt/assets/fonts/,
   Extension = .otf,
   UprightFont = *-Regular,
   BoldFont = *-Bold,
