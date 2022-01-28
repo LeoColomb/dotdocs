@@ -11,7 +11,8 @@ RUN tlmgr update --self \
                   arydshln \
                   enumitem \
                   xltxtra \
-                  realscripts
+                  realscripts \
+                  ragged2e
 
 COPY ./src /opt
 COPY ./assets /opt/assets
