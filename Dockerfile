@@ -10,7 +10,8 @@ RUN tlmgr update --self \
                   titlesec \
                   arydshln \
                   enumitem \
-                  xltxtra
+                  xltxtra \
+                  realscripts
 
 COPY ./src /opt
 COPY ./assets /opt/assets
