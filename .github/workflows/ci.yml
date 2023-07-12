@@ -24,9 +24,4 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/test:/data" ghcr.io/${{ secrets.DOCKER_IMAGE }} "/data/Fixture.md" \
-            --output "/data/Output.pdf" \
-            --variable title="Fixture" \
-            --variable id="Id" \
-            --template="/opt/template.tex" \
-            --pdf-engine=xelatex
+          docker run --rm -v "${PWD}/test:/data" ghcr.io/${{ secrets.DOCKER_IMAGE }} "/data/fixture.typ"

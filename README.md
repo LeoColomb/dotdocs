@@ -11,21 +11,13 @@
 
 ### Run
 
-```shell
-docker run --rm -v "${PWD}:/data" ghcr.io/leocolomb/dotdocs "/data/[file].md" \
-  --output "/data/[file].pdf" \
-  --variable title="[type]" \
-  --variable id="[id of type]" \
-  --template="/opt/template.tex" \
-  --pdf-engine=xelatex
-```
+> **Note**: TODO
 
 ## Usage
 
 ### Softs
 
-* [Pandoc](https://pandoc.org/)
-* [LaTeX](https://www.latex-project.org/)
+* [Typst](https://typst.app/)
 
 ### Fonts
 

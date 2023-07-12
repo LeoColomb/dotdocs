@@ -1,18 +1,4 @@
-FROM pandoc/latex:latest
+FROM ghcr.io/typst/typst:v0.6.0
 
-RUN tlmgr update --self \
- && tlmgr install numprint \
-                  moreverb \
-                  lastpage \
-                  footmisc \
-                  spreadtab \
-                  xstring \
-                  titlesec \
-                  arydshln \
-                  enumitem \
-                  xltxtra \
-                  realscripts \
-                  ragged2e
-
-COPY ./src /opt
+COPY ./templates /opt/templates
 COPY ./assets /opt/assets
