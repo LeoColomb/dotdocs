@@ -1,6 +1,6 @@
 # .docs
 
-> Documents template
+> 📄 .docs paper template
 
 ## Getting Started
 
