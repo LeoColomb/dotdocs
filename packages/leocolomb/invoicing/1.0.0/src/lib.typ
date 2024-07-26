@@ -1,4 +1,4 @@
-#import "@leocolomb/logotype:0.0.0": *
+#import "@leocolomb/logotype:1.0.0": *
 
 #let rule(margin: 1.2em) = {
   v(margin)

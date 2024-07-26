@@ -1,4 +1,4 @@
-#import "@leocolomb/invoicing:0.0.0": template
+#import "@leocolomb/invoicing:1.0.0": template
 
 #show: template.with(
   type: "Fixture",
