@@ -1,7 +1,7 @@
-// Ptimary color
+// Primary color
 #let primary_colour = rgb("#000")
 
-// Logo
+// Logotype
 #let logo() = {
   text(
     font: "The Bold Font"

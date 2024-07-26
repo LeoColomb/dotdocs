@@ -1,0 +1,13 @@
+[package]
+name = "invoicing"
+version = "0.0.0"
+entrypoint = "lib.typ"
+authors = ["Léo Colombaro <@LeoColomb>"]
+license = "MIT"
+description = ""
+repository = "https://github.com/LeoColomb/dotdocs"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
