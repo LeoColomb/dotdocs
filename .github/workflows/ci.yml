@@ -20,10 +20,10 @@ jobs:
       - name: Setup Bininstall
         uses: cargo-bins/cargo-binstall@v1.8.0
 
-      - run: cargo binstall typstyle --no-confirm
+      - run: cargo binstall --no-confirm typstyle
 
       - name: Lint
-        run: typstyle format-all --check
+        run: typstyle --check format-all
 
   test:
     name: Test
