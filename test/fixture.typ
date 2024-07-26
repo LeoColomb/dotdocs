@@ -14,7 +14,7 @@
   recipient: [
     *Test Actor*
   ],
-  pricelist: ()
+  pricelist: (),
 )
 
 Body fixture.
