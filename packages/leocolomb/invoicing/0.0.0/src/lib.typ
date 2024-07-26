@@ -1,4 +1,5 @@
-#import "@local/mypkg:1.0.0": * primary_colour, logo
+#import "@leocolomb/logotype:0.0.0": *
+
 #let rule(margin: 1.2em) = {
   v(margin)
   line(
@@ -76,8 +77,8 @@
     #text(size: 7pt)[#upper("Exécutant")]\
     *#name*\
     #address\
-    #text(size: 7pt)[Siret : #siret] 
-    
+    #text(size: 7pt)[Siret : #siret]
+
     #colbreak()
 
     #set align(right)
@@ -91,7 +92,7 @@
     Projet *#project*\
     #type n° *#reference* du *#date* à Paris
   ]
-  
+
   rule()
 
   [
@@ -99,7 +100,7 @@
 
     #body
   ]
-  
+
   rule()
 
   let total = pricelist.fold(0, (init, el) => init + el.at(-1))
@@ -123,13 +124,13 @@
     #set text(size: 8pt)
     TVA non applicable, art. 293B du CGI
   ]
-  
+
   v(2em)
 
   if type == "Facture" {[
     *Facture à payer avant 30 jours à compter de la date de facturation*\
     Passée la date d'échéance, tout paiement différé entraîne l'application d'une pénalité calculée à un taux égal à 3 fois le taux d'intérêt légal en vigueur à la date de facturation (loi 2008‑776 du 04/08/2008) ainsi qu'une indemnité forfaitaire pour frais de recouvrement de 40 euros (décret 2012‑115 du 02/10/2012).
-    
+
     *Aucun escompte pour règlement anticipé*
   ]
 
