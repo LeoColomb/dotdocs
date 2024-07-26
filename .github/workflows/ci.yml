@@ -33,7 +33,9 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       - name: Setup Typst Packages
-        run: ln -s ~/.local/share/typst/packages ./packages
+        run: |
+          mkdir -p ~/.local/share/typst
+          ln -s $PWD/packages ~/.local/share/typst/packages
 
       - name: Run Typst
         run: typst compile test/fixture.typ dist/test.pdf --font-path assets/fonts
