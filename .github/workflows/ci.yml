@@ -20,7 +20,7 @@ jobs:
       - run: cargo binstall --no-confirm typstyle
 
       - name: Lint
-        run: typstyle --check format-all
+        run: typstyle -p --check format-all
 
   test:
     name: Test
@@ -33,7 +33,7 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       - name: Setup Typst Packages
-        run: ln -s packages ~/.local/share/typst/packages
+        run: ln -s ~/.local/share/typst/packages ./packages
 
       - name: Run Typst
         run: typst compile test/fixture.typ dist/test.pdf --font-path assets/fonts

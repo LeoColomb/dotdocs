@@ -4,7 +4,7 @@
   v(margin)
   line(
     length: 100%,
-    stroke: 0.5pt + gray
+    stroke: 0.5pt + gray,
   )
   v(margin)
 }
@@ -42,23 +42,20 @@
   set text(
     lang: "fr",
     size: 9.9pt,
-    font: "IBM Plex Sans"
+    font: "IBM Plex Sans",
   )
   set page(
-    header: text(
-      font: "The Bold Font"
-    )[
+    header: text(font: "The Bold Font")[
       #grid(
         columns: (auto, auto),
         gutter: 5pt,
-        text(size: 27pt)[o],
-        par(leading: 0.4em)[Léo\ Colombaro]
+        text(size: 27pt)[o], par(leading: 0.4em)[Léo\ Colombaro],
       )
     ],
     footer: [
       #set text(
         fill: gray,
-        size: 5pt
+        size: 5pt,
       )
       #name\
       #address\
@@ -68,7 +65,7 @@
         "1 / 1",
         both: true,
       )
-    ]
+    ],
   )
 
   v(1em)
@@ -127,24 +124,26 @@
 
   v(2em)
 
-  if type == "Facture" {[
-    *Facture à payer avant 30 jours à compter de la date de facturation*\
-    Passée la date d'échéance, tout paiement différé entraîne l'application d'une pénalité calculée à un taux égal à 3 fois le taux d'intérêt légal en vigueur à la date de facturation (loi 2008‑776 du 04/08/2008) ainsi qu'une indemnité forfaitaire pour frais de recouvrement de 40 euros (décret 2012‑115 du 02/10/2012).
+  if type == "Facture" {
+    [
+      *Facture à payer avant 30 jours à compter de la date de facturation*\
+      Passée la date d'échéance, tout paiement différé entraîne l'application d'une pénalité calculée à un taux égal à 3 fois le taux d'intérêt légal en vigueur à la date de facturation (loi 2008‑776 du 04/08/2008) ainsi qu'une indemnité forfaitaire pour frais de recouvrement de 40 euros (décret 2012‑115 du 02/10/2012).
 
-    *Aucun escompte pour règlement anticipé*
-  ]
-
-  rule()
-
-  [
-    Paiement par *virement bancaire*
-
-    #columns(2)[
-      / Titulaire: #name
-      / IBAN:
-      #colbreak()
-      / RIB:
-      / BIC:
+      *Aucun escompte pour règlement anticipé*
     ]
-  ]}
+
+    rule()
+
+    [
+      Paiement par *virement bancaire*
+
+      #columns(2)[
+        / Titulaire: #name
+        / IBAN:
+        #colbreak()
+        / RIB:
+        / BIC:
+      ]
+    ]
+  }
 }
