@@ -1,8 +1,12 @@
 [package]
 name = "logotype"
 version = "0.0.0"
-entrypoint = "lib.typ"
+entrypoint = "src/lib.typ"
 authors = ["Léo Colombaro <@LeoColomb>"]
 license = "MIT"
 description = ""
 repository = "https://github.com/LeoColomb/dotdocs"
+keywords = []
+categories = []
+disciplines = []
+compiler = ""

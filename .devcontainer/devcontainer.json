@@ -2,7 +2,9 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"nvarner.typst-lsp"
+				"nvarner.typst-lsp",
+				"EditorConfig.EditorConfig",
+				"tamasfe.even-better-toml"
 			]
 		}
 	}
