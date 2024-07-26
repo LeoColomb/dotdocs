@@ -36,6 +36,7 @@ jobs:
         run: |
           mkdir -p ~/.local/share/typst
           ln -s $PWD/packages ~/.local/share/typst/packages
+          tree ~/.local/share/typst/packages
 
       - name: Run Typst
         run: typst compile test/fixture.typ dist/test.pdf --font-path assets/fonts
