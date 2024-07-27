@@ -12,6 +12,9 @@ repository = "https://github.com/LeoColomb/dotdocs"
 keywords = []
 categories = []
 disciplines = []
+exclude = [
+	"tests",
+]
 
 [template]
 path = "template"
