@@ -39,7 +39,19 @@ jobs:
           tree ~/.local/share/typst/packages
 
       - name: Run Typst
-        run: typst compile test/fixture.typ dist/test.pdf --font-path assets/fonts
+        run: typst compile test/fixture.typ dist/test.png --font-path assets/fonts
+
+      - name: Archive diffs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: artifacts
+          path: |
+            dist/*.png
+            tests/**/diff/*.png
+            tests/**/out/*.png
+            tests/**/ref/*.png
+          retention-days: 5
 
   build:
     name: Build

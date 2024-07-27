@@ -4,6 +4,7 @@
 name = "logotype"
 version = "1.0.0"
 entrypoint = "src/lib.typ"
+compiler = "0.11.0"
 authors = ["Léo Colombaro <@LeoColomb>"]
 license = "MIT"
 description = ""
@@ -11,4 +12,3 @@ repository = "https://github.com/LeoColomb/dotdocs"
 keywords = []
 categories = []
 disciplines = []
-compiler = ""
