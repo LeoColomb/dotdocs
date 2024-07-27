@@ -38,7 +38,8 @@ docker run --rm \
 ### Fonts
 
 * [The Bold Font](https://www.dafont.com/the-bold-font.font)
-* [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro)
+* [Source Sans Pro](https://adobe-fonts.github.io/source-sans/)
+* [IBM Plex Sans](https://www.ibm.com/plex/)
 
 ## License
 
