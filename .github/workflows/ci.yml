@@ -39,7 +39,9 @@ jobs:
           tree ~/.local/share/typst/packages
 
       - name: Run Typst
-        run: typst compile test/fixture.typ dist/test.png --font-path assets/fonts
+        run: typst compile test/fixture.typ dist/test.png
+        env:
+          TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
       - name: Archive diffs
         uses: actions/upload-artifact@v4

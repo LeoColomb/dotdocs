@@ -4,26 +4,41 @@
 
 ## Getting Started
 
-### Assets
+### Files
 
-* `assets/logo.pdf`: Corporate logo
-* `assets/fonts`: Fonts
-
-### Run
-
-> [!NOTE]
-> To-Do
+* `assets/fonts`: Fonts (`TYPST_FONT_PATHS`)
+* `packages/**`: Packages (https://github.com/typst/packages)
 
 ## Usage
 
-### Softs
+### Direct
+
+```console
+typst compile src/main.typ dist/main.pdf
+```
+
+### Container
+
+```console
+docker run --rm \
+  -v "${PWD}/src:/opt/data/src" \
+  -v "${PWD}/dist:/opt/data/dist" \
+  ghcr.io/leocolomb/dotdocs:latest \
+  compile \
+    "/opt/data/src/main.typ" \
+    "/opt/data/dist/main.pdf"
+```
+
+## Acknowledgments
+
+### Software
 
 * [Typst](https://typst.app/)
 
 ### Fonts
 
-* The Bold Font: https://www.dafont.com/the-bold-font.font
-* Source Sans Pro: https://github.com/adobe-fonts/source-sans-pro/releases
+* [The Bold Font](https://www.dafont.com/the-bold-font.font)
+* [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro)
 
 ## License
 
