@@ -42,7 +42,7 @@
   set text(
     lang: "fr",
     size: 9.9pt,
-    font: "IBM Plex Sans",
+    font: "Source Sans Pro",
   )
   set page(
     header: text(font: "The Bold Font")[
