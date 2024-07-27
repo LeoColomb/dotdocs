@@ -1,5 +1,9 @@
 dist/*
 !dist/.gitkeep
 
+src/*
+!src/.gitkeep
+
 # Generated
-.pdf
+*.pdf
+*.png
