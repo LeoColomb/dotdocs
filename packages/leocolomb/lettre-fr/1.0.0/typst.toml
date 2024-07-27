@@ -1,0 +1,19 @@
+# https://github.com/typst/packages
+
+[package]
+name = "lettre-fr"
+version = "1.0.0"
+entrypoint = "src/lib.typ"
+compiler = "0.11.0"
+authors = ["Léo Colombaro <@LeoColomb>"]
+license = "MIT"
+description = ""
+repository = "https://github.com/LeoColomb/dotdocs"
+keywords = []
+categories = []
+disciplines = []
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
