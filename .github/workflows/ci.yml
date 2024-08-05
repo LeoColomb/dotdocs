@@ -71,9 +71,9 @@ jobs:
           context: ./
           file: ./Dockerfile
           tags: |
-            ghcr.io/${{ secrets.DOCKER_IMAGE }}:latest
+            ghcr.io/${{ vars.DOCKER_IMAGE }}:latest
           load: true
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/test:/opt/data" ghcr.io/${{ secrets.DOCKER_IMAGE }} c "/opt/data/fixture.typ"
+          docker run --rm -v "${PWD}/test:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/fixture.typ"

@@ -36,6 +36,6 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
           tags: |
-            ghcr.io/${{ secrets.DOCKER_IMAGE }}:latest
-#            ghcr.io/${{ secrets.DOCKER_IMAGE }}:${{ github.ref }}
+            ghcr.io/${{ vars.DOCKER_IMAGE }}:latest
+#            ghcr.io/${{ vars.DOCKER_IMAGE }}:${{ github.ref }}
           push: true
