@@ -52,7 +52,7 @@
         text(size: 27pt)[o], par(leading: 0.4em)[Léo\ Colombaro],
       )
     ],
-    footer: [
+    footer: context [
       #set text(
         fill: gray,
         size: 5pt,

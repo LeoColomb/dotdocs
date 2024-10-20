@@ -47,7 +47,6 @@
   )[#icon("calendar")#period]
 }
 
-
 #let term(
   period,
   location,
@@ -84,22 +83,21 @@
     size: 9.9pt,
     font: "IBM Plex Sans",
   )
+  set columns(gutter: 15pt)
   set page(
+    columns: 2,
     margin: (
       x: 53pt,
-      y: 52pt,
+      y: 50pt,
     ),
+    header-ascent: 60%,
     header: rect(
       width: 100%,
-      stroke: none,
       fill: primary_colour,
-      inset: (
-        bottom: 1.4em,
-      ),
+      inset: 0pt,
       outset: (
-        x: 16%,
-        top: 140%,
-        bottom: 10%,
+        x: 53pt,
+        y: 15pt,
       ),
       [
         #set text(
@@ -110,16 +108,13 @@
         #set align(right)
         #upper[
           Application for
-          #if position != [] {[a #position]} else {[a]} position
-          #if company != [] {
-            [
-              at #company
-            ]
-          }
+          #if position != [] [a #position] else [a]
+          position
+          #if company != [] [at #company]
         ]
       ],
     ),
-    footer: [
+    footer: context [
       #set text(
         fill: gray,
         size: 8pt,
@@ -144,36 +139,33 @@
     it.body,
   )
 
-  // First page header.
-  rect(
-    width: 100%,
-    stroke: none,
-    fill: primary_colour,
-    inset: (
-      x: 0pt,
-      top: 1pt,
-      bottom: 30pt,
-    ),
-    outset: (
-      x: 16%,
-      top: 23%,
-      bottom: 0%,
-    ),
-    [
-      #set text(fill: white)
-      = #name
-      #services(links)
-      #if tagline != none {
-        tagline
-      }
-    ],
+  place(
+    top,
+    scope: "parent",
+    float: true,
+    rect(
+      width: 100%,
+      stroke: none,
+      fill: primary_colour,
+      inset: (
+        x: 0pt,
+        top: 1pt,
+        bottom: 30pt,
+      ),
+      outset: (
+        x: 53pt,
+        top: 23%,
+      ),
+      [
+        #set text(fill: white)
+        = #name
+        #services(links)
+        #if tagline != none {
+          tagline
+        }
+      ],
+    )
   )
-
-  v(1em)
-
-  columns(
-    2,
-    gutter: 15pt,
-    body,
-  )
+  
+  body
 }
