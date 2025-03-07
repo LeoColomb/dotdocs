@@ -1,4 +1,4 @@
-FROM ghcr.io/typst/typst:v0.13.0
+FROM ghcr.io/typst/typst:v0.13.1
 
 ENV XDG_DATA_HOME=/opt
 ENV TYPST_FONT_PATHS=/opt/typst/assets/fonts
