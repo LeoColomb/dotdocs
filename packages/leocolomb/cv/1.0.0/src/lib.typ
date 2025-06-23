@@ -136,6 +136,7 @@
   )
   show heading.where(level: 4): it => text(
     fill: primary_colour,
+    size: 11pt,
     it.body,
   )
 
