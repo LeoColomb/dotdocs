@@ -4,33 +4,24 @@
   // The letter's sender, which is display at the top of the page.
   sender: none,
   sender_address: none,
-
   // The letter's recipient, which is displayed close to the top.
   recipient: none,
   recipient_address: none,
-
   // The location, displayed to the right.
   location: none,
-
   // The date, displayed to the right.
   date: datetime.today(),
-
   // The subject line.
   subject: none,
   // The reference line.
   reference: none,
-
   opening: none,
   closing: none,
-
   // The letter's content.
-  body
+  body,
 ) = {
   // Configure page and text properties.
-  set page(
-    paper: "a4",
-    margin: (x: 2cm, y: 3.81cm),
-  )
+  set page(paper: "a4", margin: (x: 2cm, y: 3.81cm))
   set text(
     font: "PT Sans",
     lang: "fr",

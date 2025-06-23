@@ -119,7 +119,11 @@
   )
 
   // Configure headings properties.
-  show heading.where(level: 2): it => text(fill: primary_colour, size: 11pt, upper(it.body))
+  show heading.where(level: 2): it => text(
+    fill: primary_colour,
+    size: 11pt,
+    upper(it.body),
+  )
   show heading.where(level: 4): it => text(
     fill: primary_colour,
     size: 11pt,

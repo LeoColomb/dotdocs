@@ -13,30 +13,22 @@
 // and formats it as a corporate.
 #let template(
   type: "Facture",
-
   // The name with wich the CV opens.
   name: none,
-
   // The links to self references/social networks.
   address: none,
-
   // The CV's tagline.
   tagline: none,
-
   // The applied position.
   siret: [],
-
   project: none,
   reference: none,
   date: none,
-
   // The applied company.
   recipient: [],
-
   pricelist: (),
-
   // The CV's content.
-  body
+  body,
 ) = {
   // Configure page and text properties.
   set text(
@@ -109,13 +101,14 @@
   table(
     columns: (1fr, auto),
     inset: 10pt,
-    stroke: none, //0.5pt + gray,
+    stroke: none,
+    //0.5pt + gray,
     align: (x, y) => (left, right).at(x),
     fill: (_, row) => if calc.even(row) { luma(240) } else { white },
     [*Désignation*], [*Prix HT*],
     ..pricelist.flatten(),
     align(right)[*Total*],
-    [*#total €*]
+    [*#total €*],
   )
   align(right)[
     #set text(size: 8pt)

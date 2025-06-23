@@ -1,4 +1,4 @@
-#import "@leocolomb/cv:1.0.1": template, term, date
+#import "@leocolomb/cv:1.0.1": date, template, term
 
 #show: template.with(
   name: [John Doe],

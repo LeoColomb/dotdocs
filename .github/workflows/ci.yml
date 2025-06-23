@@ -28,6 +28,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: typstyle
+
+      - name: Lint
+        run: typstyle --check .
+
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v4
 
