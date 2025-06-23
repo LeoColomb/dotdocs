@@ -14,10 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bininstall
-        uses: cargo-bins/cargo-binstall@v1.13.0
-
-      - run: cargo binstall --no-confirm typstyle
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: typstyle
 
       - name: Lint
         run: typstyle -p --check format-all
