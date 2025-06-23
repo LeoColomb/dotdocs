@@ -19,7 +19,7 @@ jobs:
           tool: typstyle
 
       - name: Lint
-        run: typstyle -p --check format-all
+        run: typstyle -p --check
 
   test:
     name: Test
