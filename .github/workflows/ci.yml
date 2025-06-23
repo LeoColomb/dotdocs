@@ -108,4 +108,4 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/test:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/fixture.typ"
+          docker run --rm -v "${PWD}/tests:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/fixture.typ"
