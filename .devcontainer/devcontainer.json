@@ -2,7 +2,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"nvarner.typst-lsp",
+				"myriad-dreamin.tinymist",
 				"EditorConfig.EditorConfig",
 				"tamasfe.even-better-toml"
 			]
