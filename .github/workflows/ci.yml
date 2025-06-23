@@ -19,21 +19,43 @@ jobs:
           tool: typstyle
 
       - name: Lint
-        run: typstyle -p --check .
+        run: typstyle --check .
 
-  test:
-    name: Test
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Setup Typst Packages
+        run: |
+          mkdir -p ~/.local/share/typst
+          ln -s $PWD/packages ~/.local/share/typst/packages
+          tree ~/.local/share/typst/packages
+
       - uses: taiki-e/install-action@v2
         with:
-          tool: typstyle
+          tool: tytanic
 
-      - name: Lint
-        run: typstyle --check .
+      - name: Run Tytanic
+        run: tt run --no-fail-fast --root ./packages/leocolomb/logotype/1.0.0/
+        env:
+          TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
+
+      - name: Archive diffs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: artifacts
+          path: |
+            tests/**/diff/*.png
+            tests/**/out/*.png
+            tests/**/ref/*.png
+          retention-days: 5
 
   compile:
     name: Compile
@@ -52,7 +74,7 @@ jobs:
           tree ~/.local/share/typst/packages
 
       - name: Run Typst
-        run: typst compile test/fixture.typ dist/test.png
+        run: typst compile tests/fixture.typ dist/test.png
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
@@ -63,9 +85,6 @@ jobs:
           name: artifacts
           path: |
             dist/*.png
-            tests/**/diff/*.png
-            tests/**/out/*.png
-            tests/**/ref/*.png
           retention-days: 5
 
   build:
