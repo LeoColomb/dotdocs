@@ -5,11 +5,7 @@
   shift: 1.2pt,
   margin: 2pt,
 ) = {
-  box(
-    baseline: shift,
-    height: 9pt,
-    image("assets/" + name + ".svg"),
-  )
+  box(baseline: shift, height: 9pt, image("assets/" + name + ".svg"))
   h(margin)
 }
 
@@ -19,21 +15,20 @@
 
   services
     .map(service => {
-        icon(service.name)
+      icon(service.name)
 
-        if "link" in service.keys() {
-          if "display" in service.keys() {
-            link(service.link)[#{
-                service.display
-              }]
-          } else {
-            link(service.link)
-          }
+      if "link" in service.keys() {
+        if "display" in service.keys() {
+          link(service.link)[#{
+              service.display
+            }]
         } else {
-          service.display
+          link(service.link)
         }
-
-      })
+      } else {
+        service.display
+      }
+    })
     .join(h(10pt))
   [
 
@@ -62,21 +57,16 @@
 #let template(
   // The name with wich the CV opens.
   name: none,
-
   // The links to self references/social networks.
   links: (),
-
   // The CV's tagline.
   tagline: none,
-
   // The applied position.
   position: [],
-
   // The applied company.
   company: [],
-
   // The CV's content.
-  body
+  body,
 ) = {
   // Configure page and text properties.
   set text(
@@ -129,44 +119,35 @@
   )
 
   // Configure headings properties.
-  show heading.where(level: 2): it => text(
-    fill: primary_colour,
-    size: 11pt,
-    upper(it.body),
-  )
+  show heading.where(level: 2): it => text(fill: primary_colour, size: 11pt, upper(it.body))
   show heading.where(level: 4): it => text(
     fill: primary_colour,
     size: 11pt,
     it.body,
   )
 
-  place(
-    top,
-    scope: "parent",
-    float: true,
-    rect(
-      width: 100%,
-      stroke: none,
-      fill: primary_colour,
-      inset: (
-        x: 0pt,
-        top: 1pt,
-        bottom: 30pt,
-      ),
-      outset: (
-        x: 53pt,
-        top: 23%,
-      ),
-      [
-        #set text(fill: white)
-        = #name
-        #services(links)
-        #if tagline != none {
-          tagline
-        }
-      ],
+  place(top, scope: "parent", float: true, rect(
+    width: 100%,
+    stroke: none,
+    fill: primary_colour,
+    inset: (
+      x: 0pt,
+      top: 1pt,
+      bottom: 30pt,
     ),
-  )
+    outset: (
+      x: 53pt,
+      top: 23%,
+    ),
+    [
+      #set text(fill: white)
+      = #name
+      #services(links)
+      #if tagline != none {
+        tagline
+      }
+    ],
+  ))
 
   body
 }
