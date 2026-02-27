@@ -47,7 +47,7 @@ jobs:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
       - name: Archive diffs
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: artifacts
@@ -79,7 +79,7 @@ jobs:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
       - name: Archive diffs
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: artifacts
