@@ -21,7 +21,14 @@
   body,
 ) = {
   // Configure page and text properties.
-  set page(paper: "a4", margin: (x: 2cm, y: 3.81cm))
+  set document(
+    title: subject,
+    author: sender
+  )
+  set page(
+    paper: "a4",
+    margin: (x: 2cm, y: 2.81cm)
+  )
   set text(
     font: "PT Sans",
     lang: "fr",
@@ -59,7 +66,7 @@
     pad(right: 10%, strong(reference))
   }
   if subject != none {
-    pad(right: 10%, strong(subject))
+    pad(right: 10%, strong([Objet~: ] + subject))
   }
 
   v(3em)
