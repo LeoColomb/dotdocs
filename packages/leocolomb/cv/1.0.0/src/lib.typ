@@ -69,6 +69,10 @@
   body,
 ) = {
   // Configure page and text properties.
+  set document(
+    title: [Curriculum Vitæ — #name],
+    author: name,
+  )
   set text(
     size: 9.9pt,
     font: "IBM Plex Sans",
@@ -97,8 +101,8 @@
         )
         #set align(right)
         #upper[
-          Application for
-          #if position != [] [a #position] else [a]
+          Application for a
+          #if position != [] [#position]
           position
           #if company != [] [at #company]
         ]
