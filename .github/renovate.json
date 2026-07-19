@@ -1,4 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>LeoColomb/.github:renovate-config"]
+  "extends": ["local>LeoColomb/.github:renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "docker",
+      "managerFilePatterns": [
+        "**/typst.toml"
+      ],
+      "matchStrings": [
+        "#\\s*renovate: image=(?<depName>.*?)\\s+compiler\\s*=\\s*[\"']?(?<currentValue>[\\w+\\.\\-]*)"
+      ]
+    }
+  ]
 }

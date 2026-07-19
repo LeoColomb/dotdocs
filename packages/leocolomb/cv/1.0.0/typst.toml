@@ -4,6 +4,7 @@
 name = "cv"
 version = "1.0.3"
 entrypoint = "src/lib.typ"
+# renovate: image=ghcr.io/typst/typst
 compiler = "0.14.1"
 authors = ["Léo Colombaro <@LeoColomb>"]
 license = "MIT"
