@@ -20,8 +20,8 @@
       if "link" in service.keys() {
         if "display" in service.keys() {
           link(service.link)[#{
-              service.display
-            }]
+            service.display
+          }]
         } else {
           link(service.link)
         }

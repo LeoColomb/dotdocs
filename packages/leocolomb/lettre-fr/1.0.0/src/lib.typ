@@ -23,11 +23,11 @@
   // Configure page and text properties.
   set document(
     title: subject,
-    author: sender
+    author: sender,
   )
   set page(
     paper: "a4",
-    margin: (x: 2cm, y: 2.81cm)
+    margin: (x: 2cm, y: 2.81cm),
   )
   set text(
     font: "PT Sans",
