@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - uses: taiki-e/install-action@v2.85.6
+      - uses: taiki-e/install-action@v2.85.7
         with:
           tool: typstyle
 
@@ -37,7 +37,7 @@ jobs:
           ln -s $PWD/packages ~/.local/share/typst/packages
           tree ~/.local/share/typst/packages
 
-      - uses: taiki-e/install-action@v2.85.6
+      - uses: taiki-e/install-action@v2.85.7
         with:
           tool: tytanic
 
