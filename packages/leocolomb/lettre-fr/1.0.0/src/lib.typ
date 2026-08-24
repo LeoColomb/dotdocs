@@ -19,6 +19,8 @@
   reference: none,
   opening: none,
   closing: none,
+  // Additional styling
+  style: true,
   // The letter's content.
   body,
 ) = {
@@ -36,16 +38,16 @@
     lang: "fr",
   )
 
-  columns(2, gutter: 1cm)[
+  columns(2, gutter: 2cm)[
     // Display sender.
-    #strong(sender)\
+    #sender\
     #sender_address
 
     #colbreak()
 
     // Display recipient.
     #v(2cm)
-    #strong(recipient)\
+    #recipient\
     #recipient_address
   ]
 
@@ -56,7 +58,7 @@
   if date != none {
     pad(
       left: 9cm,
-      emph()[
+      [
         Fait à #location, le #display-date(date)
       ],
     )

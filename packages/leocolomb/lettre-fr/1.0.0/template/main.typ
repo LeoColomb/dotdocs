@@ -1,4 +1,4 @@
-#import "@local/lettre-fr:1.0.2": template
+#import "@local/lettre-fr:1.0.3": template
 
 #show: template.with(
   sender: "Jean Dupond",
@@ -18,4 +18,8 @@
   closing: [Dans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes sentiments distingués.],
 )
 
-#lorem(99)
+#lorem(30)
+
+#lorem(60)
+
+#lorem(30)
