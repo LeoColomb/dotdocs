@@ -74,7 +74,7 @@ jobs:
           tree ~/.local/share/typst/packages
 
       - name: Run Typst
-        run: typst compile tests/fixture.typ dist/test.png
+        run: typst compile packages/leocolomb/invoicing/1.0.0/tests/template/test.typ dist/test.png
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
@@ -108,4 +108,5 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/tests:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/fixture.typ"
+          docker run --rm -v "${PWD}/packages/leocolomb/logotype/1.0.0/tests/rendering:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/test.typ"
+          docker run --rm -v "${PWD}/packages/leocolomb/invoicing/1.0.0/tests/template:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/test.typ"
