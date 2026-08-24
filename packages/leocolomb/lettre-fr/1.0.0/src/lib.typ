@@ -23,11 +23,11 @@
   // Configure page and text properties.
   set document(
     title: subject,
-    author: sender,
+    author: sender
   )
   set page(
     paper: "a4",
-    margin: (x: 2cm, y: 2.81cm),
+    margin: (x: 2cm, y: 2.81cm)
   )
   set text(
     font: "PT Sans",
@@ -55,7 +55,7 @@
     pad(
       left: 9cm,
       emph()[
-        #location, #date.display("[weekday] [day padding:none] [month repr:long] [year]")
+        Fait à #location, le #date.display("[weekday] [day padding:none] [month repr:long] [year]")
       ],
     )
   }
@@ -66,7 +66,7 @@
     pad(right: 10%, strong(reference))
   }
   if subject != none {
-    pad(right: 10%, strong([Objet~: ] + subject))
+    pad(right: 10%, [Objet~: ] + strong(subject))
   }
 
   v(3em)
@@ -76,7 +76,7 @@
   v(1em)
 
   // Add body and name.
-  par()[#body]
+  body
 
   v(1em)
   closing

@@ -2,22 +2,18 @@
 
 [package]
 name = "lettre-fr"
-version = "1.0.1"
+version = "1.0.2"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
-compiler = "0.15.1"
-authors = ["Léo Colombaro <@LeoColomb>"]
+compiler = "0.14.2"
+authors = [ "Léo Colombaro <@LeoColomb>" ]
 license = "MIT"
 description = ""
 repository = "https://github.com/LeoColomb/dotdocs"
-keywords = []
-categories = [
-  "office",
-]
-disciplines = []
-exclude = [
-	"tests",
-]
+keywords = [ ]
+categories = [ "office" ]
+disciplines = [ ]
+exclude = [ "tests" ]
 
 [template]
 path = "template"
