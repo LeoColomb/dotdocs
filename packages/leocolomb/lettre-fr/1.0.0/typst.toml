@@ -2,13 +2,13 @@
 
 [package]
 name = "lettre-fr"
-version = "1.0.4"
+version = "1.0.5"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.14.2"
 authors = [ "Léo Colombaro <@LeoColomb>" ]
 license = "MIT"
-description = ""
+description = "Normée AFNOR NF Z 11-001"
 repository = "https://github.com/LeoColomb/dotdocs"
 keywords = [ ]
 categories = [ "office" ]

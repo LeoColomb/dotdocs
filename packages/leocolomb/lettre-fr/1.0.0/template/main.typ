@@ -1,4 +1,4 @@
-#import "@local/lettre-fr:1.0.3": template
+#import "@local/lettre-fr:1.0.5": template
 
 #show: template.with(
   sender: "Jean Dupond",
@@ -13,7 +13,7 @@
     Quarto Creek, VA 22438
   ],
   location: [Terre],
-  subject: [Lettre],
+  subject: [Lettre importante],
   opening: [Madame, Monsieur,],
   closing: [Dans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes sentiments distingués.],
 )

@@ -19,8 +19,6 @@
   reference: none,
   opening: none,
   closing: none,
-  // Additional styling
-  style: true,
   // The letter's content.
   body,
 ) = {
@@ -36,6 +34,7 @@
   set text(
     font: "PT Sans",
     lang: "fr",
+    region: "fr"
   )
 
   columns(2, gutter: 2cm)[

@@ -13,9 +13,13 @@
     Quarto Creek, VA 22438
   ],
   location: [Terre],
-  subject: [Lettre],
+  subject: [Lettre importante],
   opening: [Madame, Monsieur,],
   closing: [Dans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes sentiments distingués.],
 )
 
-#lorem(99)
+#lorem(30)
+
+#lorem(60)
+
+#lorem(30)
