@@ -1,3 +1,5 @@
+#import "@preview/datify:1.3.0": display-date
+
 // This function gets your whole document as its `body`
 // and formats it as a simple letter.
 #let template(
@@ -55,7 +57,7 @@
     pad(
       left: 9cm,
       emph()[
-        Fait à #location, le #date.display("[weekday] [day padding:none] [month repr:long] [year]")
+        Fait à #location, le #display-date(date)
       ],
     )
   }
