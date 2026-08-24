@@ -2,7 +2,7 @@
 
 [package]
 name = "cv"
-version = "1.0.4"
+version = "1.0.5"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"

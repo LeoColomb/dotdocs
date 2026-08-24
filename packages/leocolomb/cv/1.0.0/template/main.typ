@@ -1,4 +1,4 @@
-#import "@local/cv:1.0.4": date, template, term
+#import "@local/cv:1.0.5": date, template, term
 
 #show: template.with(
   name: "John Doe",
@@ -14,6 +14,23 @@
 )
 
 == Experience
+
+=== Last Company
+
+==== Last Position\
+#term[since 1970][Earth, ALL]
+
+- Passion and arts #date[2023]
+
+==== Position\
+#term[since 1970][Earth, ALL]
+
+- Passion and arts #date[2023]
+
+==== Position\
+#term[since 1970][Earth, ALL]
+
+- Passion and arts #date[2023]
 
 === Last Company
 
