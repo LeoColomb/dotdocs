@@ -2,7 +2,7 @@
 
 [package]
 name = "invoicing"
-version = "1.0.0"
+version = "1.0.2"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"

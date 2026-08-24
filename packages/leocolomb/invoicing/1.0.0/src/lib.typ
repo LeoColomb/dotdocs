@@ -1,4 +1,9 @@
-#import "@leocolomb/logotype:1.0.0": *
+#import "@local/logotype:1.0.1": logo
+#import "@preview/zero:0.7.0": num, set-num, zi
+#import "@preview/datify:1.3.0": display-date
+
+#let euro = zi.declare(sym.euro, alt: "euro")
+#set-num(decimal-separator: ",", group: (threshold: 1))
 
 #let rule(margin: 1.2em) = {
   v(margin)
@@ -27,7 +32,7 @@
   // The applied company.
   recipient: [],
   pricelist: (),
-  // The CV's content.
+  // The content.
   body,
 ) = {
   // Configure page and text properties.
@@ -37,13 +42,7 @@
     font: "Source Sans Pro",
   )
   set page(
-    header: text(font: "The Bold Font")[
-      #grid(
-        columns: (auto, auto),
-        gutter: 5pt,
-        text(size: 27pt)[o], par(leading: 0.4em)[Léo\ Colombaro],
-      )
-    ],
+    header: logo(),
     footer: context [
       #set text(
         fill: gray,
@@ -79,7 +78,7 @@
 
   [
     Projet *#project*\
-    #type n° *#reference* du *#date* à Paris
+    #type n° *#reference* du *#display-date(date)* à Paris
   ]
 
   rule()
@@ -94,7 +93,7 @@
 
   let total = pricelist.fold(0, (init, el) => init + el.at(-1))
   pricelist = pricelist.map(el => {
-    el.at(-1) = [#el.at(-1) €]
+    el.at(-1) = euro[#el.at(-1)]
     return el
   })
 
@@ -108,7 +107,7 @@
     [*Désignation*], [*Prix HT*],
     ..pricelist.flatten(),
     align(right)[*Total*],
-    [*#total €*],
+    [*#euro[#total]*],
   )
   align(right)[
     #set text(size: 8pt)
