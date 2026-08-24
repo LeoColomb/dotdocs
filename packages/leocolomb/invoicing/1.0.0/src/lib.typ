@@ -38,6 +38,7 @@
   // Configure page and text properties.
   set text(
     lang: "fr",
+    region: "fr",
     size: 9.9pt,
     font: "Source Sans Pro",
   )
