@@ -2,13 +2,13 @@
 
 [package]
 name = "cv"
-version = "1.0.3"
+version = "1.0.4"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"
 authors = ["Léo Colombaro <@LeoColomb>"]
 license = "MIT"
-description = ""
+description = "Curriculum vitae"
 repository = "https://github.com/LeoColomb/dotdocs"
 keywords = []
 categories = [
