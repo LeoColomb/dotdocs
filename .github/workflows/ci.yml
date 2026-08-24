@@ -74,7 +74,7 @@ jobs:
           tree ~/.local/share/typst/packages
 
       - name: Run Typst
-        run: typst compile packages/leocolomb/invoicing/1.0.0/template/main.typ dist/test.png
+        run: typst compile --root $PWD packages/leocolomb/invoicing/1.0.0/tests/template/test.typ dist/test.png
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
