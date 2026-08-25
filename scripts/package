@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set +eu
 
 # adapted from https://github.com/johannes-wolf/cetz/blob/35c0868378cea5ad323cc0d9c2f76de8ed9ba5bd/scripts/package
 # licensed under Apache License 2.0
@@ -22,65 +22,33 @@ fi
 TARGET="$(resolve-target "${1:?Missing target path, @local or @preview}")"
 echo "Install dir: $TARGET"
 
-# ignore rules
-readarray -t ignores < <(grep -v '^#' .typstignore | grep '[^[:blank:]]')
+for root in packages/*/ ; do
+  echo "Install package: ${root}"
 
-# recursively print all files that are not excluded via .typstignore
-function enumerate {
-  local root="$1"
-  if [[ -f "$root" ]]; then
-    echo "$root"
-  else
-    local files
-    readarray -t files < <(find "$root" \
-      -mindepth 1 -maxdepth 1 \
-      -not -name .git \
-      -not -name .typstignore)
-    # declare -p files >&2
+  # ignore rules
+  readarray -t ignores < <(grep -v '^#' "${root}.typstignore" | grep '[^[:blank:]]')
 
-    local f
-    for f in "${files[@]}"; do
-      local include
-      include=1
+  # List of all files that get packaged
+  readarray -t files < <(enumerate "${root}" "${root}")
+  # declare -p files >&2
 
-      local ignore
-      for ignore in "${ignores[@]}"; do
-        if [[ "$ignore" =~ ^! ]]; then
-          ignore="${ignore:1}"
-          if [[ "$f" == ./$ignore ]]; then
-            # echo "\"$f\" matched \"!$ignore\"" >&2
-            include=1
-          fi
-        elif [[ "$f" == ./$ignore ]]; then
-          # echo "\"$f\" matched \"$ignore\"" >&2
-          include=0
-        fi
-      done
-      if [[ "$include" == 1 ]]; then
-        enumerate "$f"
-      fi
-    done
+  TMP="$(mktemp -d)"
+  PKG_PREFIX="$(read-toml "${root}typst.toml" "name")"
+  VERSION="$(read-toml "${root}typst.toml" "version")"
+
+  for f in "${files[@]}"; do
+    mkdir -p "$TMP/$(dirname "$f")" 2>/dev/null
+    cp -r "${root}$f" "$TMP/$f"
+  done
+
+  TARGET_PACKAGE="${TARGET:?}/${PKG_PREFIX:?}/${VERSION:?}"
+  echo "Packaged to: $TARGET_PACKAGE"
+  if rm -r "${TARGET_PACKAGE:?}" 2>/dev/null; then
+    echo "Overwriting existing version."
   fi
-}
+  mkdir -p "$TARGET_PACKAGE"
 
-# List of all files that get packaged
-readarray -t files < <(enumerate ".")
-# declare -p files >&2
-
-TMP="$(mktemp -d)"
-
-for f in "${files[@]}"; do
-  mkdir -p "$TMP/$(dirname "$f")" 2>/dev/null
-  cp -r "$ROOT/$f" "$TMP/$f"
+  # include hidden files by setting dotglob
+  shopt -s dotglob
+  mv "$TMP"/* "$TARGET_PACKAGE"
 done
-
-TARGET="${TARGET:?}/${PKG_PREFIX:?}/${VERSION:?}"
-echo "Packaged to: $TARGET"
-if rm -r "${TARGET:?}" 2>/dev/null; then
-  echo "Overwriting existing version."
-fi
-mkdir -p "$TARGET"
-
-# include hidden files by setting dotglob
-shopt -s dotglob
-mv "$TMP"/* "$TARGET"

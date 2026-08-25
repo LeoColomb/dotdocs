@@ -30,15 +30,15 @@ jobs:
         uses: typst-community/setup-typst@v5.2.0
 
       - name: Setup Typst Packages
-        run: |
-          cd packages/invoicing/ && ../../scripts/package @local && cd -
-          cd packages/logotype/ && ../../scripts/package @local && cd -
+        run: scripts/package @local
+        env:
+          TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
       - uses: typst-community/setup-tytanic@v1.1.0
       - name: Run Tytanic
         run: |
-          tt run --no-fail-fast --root ./packages/logotype/
-          tt run --no-fail-fast --root ./packages/invoicing/
+          tt run --no-fail-fast --warnings promote --root ./packages/logotype/
+          tt run --no-fail-fast --warnings promote --root ./packages/invoicing/
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
@@ -64,9 +64,7 @@ jobs:
         uses: typst-community/setup-typst@v5.2.0
 
       - name: Setup Typst Packages
-        run: |
-          cd packages/invoicing/ && ../../scripts/package @local && cd -
-          cd packages/logotype/ && ../../scripts/package @local && cd -
+        run: scripts/package @local
 
       - name: Run Typst
         run: typst compile --root $PWD packages/invoicing/tests/template/test.typ dist/test.png
