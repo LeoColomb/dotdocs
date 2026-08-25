@@ -4,7 +4,7 @@
   footer: none,
   font-size: 40pt,
   copyright: [CS-31-GOB/LUB/COL • © SDC 31 Avenue des Gobelins-13e],
-  body
+  body,
 ) = {
   set text(
     lang: "fr",
@@ -29,7 +29,7 @@
           dy: 40pt,
           upper[
             #copyright • #datetime.today().display("[month]/[year]") • v#version(v)
-          ]
+          ],
         )
       ]
     ],
