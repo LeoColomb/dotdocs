@@ -1,4 +1,4 @@
-FROM bash:5.3.15 AS packages
+FROM debian AS packages
 
 ENV XDG_DATA_HOME=/opt/dist
 ENV TYPST_FONT_PATHS=$XDG_DATA_HOME/typst/assets/fonts
