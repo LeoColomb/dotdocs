@@ -40,7 +40,7 @@ function enumerate {
   local current="$1"
   local root="$2"
   if [[ -f "$current" ]]; then
-    echo ${current#"$root"}
+    echo "${current#"$root"}"
   else
     local files
     readarray -t files < <(find "$current" \
