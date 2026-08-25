@@ -2,8 +2,8 @@ FROM debian AS packages
 
 ENV XDG_DATA_HOME=/opt/dist
 
-COPY ./scripts /opt/
-COPY ./packages /opt/
+COPY ./scripts /opt/scripts
+COPY ./packages /opt/packages
 RUN \
     cd /opt/packages/invoicing/ && ../../scripts/package @local && \
     cd /opt/packages/logotype/ && ../../scripts/package @local \
