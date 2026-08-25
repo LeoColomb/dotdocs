@@ -1,4 +1,4 @@
-FROM busybox:1.38.0 AS packages
+FROM devian:13.6 AS packages
 
 ENV XDG_DATA_HOME=/opt/dist
 ENV TYPST_FONT_PATHS=$XDG_DATA_HOME/typst/assets/fonts
