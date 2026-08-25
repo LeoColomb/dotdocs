@@ -33,16 +33,14 @@ jobs:
 
       - name: Setup Typst Packages
         run: |
-          mkdir -p ~/.local/share/typst
-          ln -s $PWD/packages ~/.local/share/typst/packages
-          tree ~/.local/share/typst/packages
-
+          cd packages/invoicing/ && ../../../../scripts/package @local && cd -
+          cd packages/logotype/ && ../../../../scripts/package @local && cd -
       - uses: taiki-e/install-action@v2.86.5
         with:
           tool: tytanic
 
       - name: Run Tytanic
-        run: tt run --no-fail-fast --root ./packages/leocolomb/logotype/1.0.0/
+        run: tt run --no-fail-fast --root ./packages/logotype/
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
