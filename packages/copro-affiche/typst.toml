@@ -1,0 +1,21 @@
+# https://github.com/typst/packages
+
+[package]
+name = "copropriete-affiche"
+version = "2.0.0"
+entrypoint = "src/lib.typ"
+authors = [ "Léo Colombaro <@LeoColomb>" ]
+license = "MIT"
+description = ""
+repository = "https://github.com/LeoColomb/dotdocs"
+keywords = [ ]
+categories = [ ]
+disciplines = [ ]
+exclude = [ "tests" ]
+# renovate: image=ghcr.io/typst/typst
+compiler = "0.15.1"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.svg"
