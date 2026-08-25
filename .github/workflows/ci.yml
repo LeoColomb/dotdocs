@@ -39,9 +39,7 @@ jobs:
 
       - uses: typst-community/setup-tytanic@v1.1.0
       - name: Run Tytanic
-        run: |
-          tt run --no-fail-fast --warnings promote --root ./packages/logotype/
-          tt run --no-fail-fast --warnings promote --root ./packages/invoicing/
+        run: tt run --no-fail-fast --warnings promote --root .
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
