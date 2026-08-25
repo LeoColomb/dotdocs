@@ -14,12 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - uses: taiki-e/install-action@v2.86.5
+      - name: Run typstyle
+        uses: typstyle-rs/typstyle-action@v1.0.1
         with:
-          tool: typstyle
-
-      - name: Lint
-        run: typstyle --check .
+          opts: --check
 
   tests:
     name: Tests
@@ -38,7 +36,9 @@ jobs:
 
       - uses: typst-community/setup-tytanic@v1.1.0
       - name: Run Tytanic
-        run: tt run --no-fail-fast
+        run: |
+          tt run --no-fail-fast --root ./packages/logotype/
+          tt run --no-fail-fast --root ./packages/invoicing/
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
