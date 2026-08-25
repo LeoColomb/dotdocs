@@ -10,7 +10,7 @@
   siret: [10142],
   project: [Template Validation],
   reference: [2084-07-B],
-  date: datetime.today().display("[day]/[month]/[year]"),
+  date: datetime.today(),
   recipient: [
     *Test Actor*
   ],

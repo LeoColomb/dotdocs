@@ -50,9 +50,9 @@ jobs:
         with:
           name: artifacts
           path: |
-            tests/**/diff/*.png
-            tests/**/out/*.png
-            tests/**/ref/*.png
+            **/tests/**/diff/*.png
+            **/tests/**/out/*.png
+            **/tests/**/ref/*.png
           retention-days: 5
 
   compile:
@@ -105,4 +105,4 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm -v "${PWD}/packages/leocolomb/invoicing/1.0.0/template:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/main.typ"
+          docker run --rm -v "${PWD}/packages/invoicing/template:/opt/data" ghcr.io/${{ vars.DOCKER_IMAGE }} c "/opt/data/main.typ"
