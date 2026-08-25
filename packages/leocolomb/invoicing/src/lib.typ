@@ -1,4 +1,4 @@
-#import "@local/logotype:1.0.0": logo
+#import "@local/logotype:1.0.2": logo
 #import "@preview/zero:0.7.0": num, set-num, zi
 #import "@preview/datify:1.3.0": display-date
 

@@ -69,9 +69,8 @@ jobs:
 
       - name: Setup Typst Packages
         run: |
-          mkdir -p ~/.local/share/typst
-          ln -s $PWD/packages ~/.local/share/typst/packages
-          tree ~/.local/share/typst/packages
+          cd packages/leocolomb/invoicing/ && ../../../../scripts/package @local && cd -
+          cd packages/leocolomb/logotype/ && ../../../../scripts/package @local && cd -
 
       - name: Run Typst
         run: typst compile --root $PWD packages/leocolomb/invoicing/1.0.0/tests/template/test.typ dist/test.png
