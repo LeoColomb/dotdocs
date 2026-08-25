@@ -6,6 +6,8 @@ dist/*
 src/*
 !src/.gitkeep
 
+packages/*/fonts
+
 # Generated
 diff/
 out/

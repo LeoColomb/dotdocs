@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set +eu
+set -eu
 
 # adapted from https://github.com/johannes-wolf/cetz/blob/35c0868378cea5ad323cc0d9c2f76de8ed9ba5bd/scripts/package
 # licensed under Apache License 2.0

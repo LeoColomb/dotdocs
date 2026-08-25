@@ -1,17 +1,18 @@
-FROM debian AS packages
+FROM bash:5.3.15 AS packages
 
 ENV XDG_DATA_HOME=/opt/dist
+ENV TYPST_FONT_PATHS=$XDG_DATA_HOME/typst/assets/fonts
 
 COPY ./scripts /opt/scripts
 COPY ./packages /opt/packages
-RUN scripts/package @local
+RUN /opt/scripts/package @local
+RUN /opt/scripts/fonts
 
 FROM ghcr.io/typst/typst:0.15.1
 
 ENV XDG_DATA_HOME=/opt
-ENV TYPST_FONT_PATHS=/opt/typst/assets/fonts
+ENV TYPST_FONT_PATHS=$XDG_DATA_HOME/typst/assets/fonts
 
 COPY --from=packages /opt/dist /opt
-COPY ./assets /opt/typst/assets
 
 ENTRYPOINT [ "/bin/typst" ]

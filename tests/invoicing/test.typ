@@ -1,4 +1,4 @@
-#import "../../src/lib.typ": template
+#import "/packages/invoicing/src/lib.typ": template
 
 #show: template.with(
   type: "Fixture",

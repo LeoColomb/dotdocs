@@ -1,4 +1,4 @@
-#import "../../src/lib.typ": template
+#import "/packages/lettre-fr/src/lib.typ": template
 
 #show: template.with(
   sender: "Jean Dupond",

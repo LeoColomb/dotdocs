@@ -31,6 +31,9 @@ jobs:
 
       - name: Setup Typst Packages
         run: scripts/package @local
+
+      - name: Setup Typst Fonts
+        run: scripts/fonts
         env:
           TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
 
@@ -51,33 +54,6 @@ jobs:
             **/tests/**/diff/*.png
             **/tests/**/out/*.png
             **/tests/**/ref/*.png
-          retention-days: 5
-
-  compile:
-    name: Compile
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v5.2.0
-
-      - name: Setup Typst Packages
-        run: scripts/package @local
-
-      - name: Run Typst
-        run: typst compile --root $PWD packages/invoicing/tests/template/test.typ dist/test.png
-        env:
-          TYPST_FONT_PATHS: "/opt/typst/assets/fonts"
-
-      - name: Archive diffs
-        uses: actions/upload-artifact@v7
-        if: always()
-        with:
-          name: artifacts
-          path: |
-            dist/*.png
           retention-days: 5
 
   build:
