@@ -33,6 +33,13 @@
   )
   set text(
     font: "Inter",
+    features: (
+      "cv05",
+      "cv11",
+      "dlig",
+      "locl",
+      "ss03",
+    ),
     lang: "fr",
     region: "fr",
   )
