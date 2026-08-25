@@ -2,6 +2,9 @@
 set -eu
 shopt -s globstar
 
+. "$(dirname "${BASH_SOURCE[0]}")/setup"
+TARGET="$(resolve-target)"
+
 TMP="$(mktemp -d)"
 DL_TMP="$(mktemp -d)"
 
@@ -16,4 +19,4 @@ cp "${DL_TMP}/VF"/*.ttf "${TMP}"
 wget -q --show-progress https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/variable/Montserrat-Italic%5Bwght%5D.ttf -qO "${TMP}/Montserrat-Italic.ttf"
 wget -q --show-progress https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/variable/Montserrat%5Bwght%5D.ttf -qO "${TMP}/Montserrat.ttf"
 
-mv "$TMP"/* "${TYPST_FONT_PATHS:-$XDG_DATA_HOME/typst/assets/fonts}"
+mv "$TMP"/* "${TYPST_FONT_PATHS:-$TARGET/typst/assets/fonts}"
