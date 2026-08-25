@@ -5,6 +5,8 @@ ENV TYPST_FONT_PATHS=$XDG_DATA_HOME/typst/assets/fonts
 
 WORKDIR /opt
 
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 COPY ./scripts /opt/scripts
 COPY ./packages /opt/packages
 RUN /opt/scripts/package @local
