@@ -32,7 +32,7 @@
     margin: (x: 2cm, y: 2.81cm),
   )
   set text(
-    font: "PT Sans",
+    font: "Inter",
     lang: "fr",
     region: "fr",
   )

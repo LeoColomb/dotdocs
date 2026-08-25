@@ -9,13 +9,17 @@ TARGET="${TYPST_FONT_PATHS:-${TARGET}}"
 TMP="$(mktemp -d)"
 DL_TMP="$(mktemp -d)"
 
-wget -q --show-progress https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-variable%400.2.0/plex-sans-variable.zip -qO "${DL_TMP}/plex-sans-variable.zip"
-unzip "${DL_TMP}/plex-sans-variable.zip" -d "${DL_TMP}"
+wget -q --show-progress https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-variable%400.2.0/plex-sans-variable.zip -qO "${DL_TMP}/plex-sans.zip"
+unzip "${DL_TMP}/plex-sans.zip" -d "${DL_TMP}"
 cp "${DL_TMP}/fonts/complete/ttf"/*.ttf "${TMP}"
 
-wget -q --show-progress https://github.com/adobe-fonts/source-sans/releases/download/3.052R/VF-source-sans-3.052R.zip -qO "${DL_TMP}/source-sans-variable.zip"
-unzip "${DL_TMP}/source-sans-variable.zip" -d "${DL_TMP}"
+wget -q --show-progress https://github.com/adobe-fonts/source-sans/releases/download/3.052R/VF-source-sans-3.052R.zip -qO "${DL_TMP}/source-sans.zip"
+unzip "${DL_TMP}/source-sans.zip" -d "${DL_TMP}"
 cp "${DL_TMP}/VF"/*.ttf "${TMP}"
+
+wget -q --show-progress https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip -qO "${DL_TMP}/inter.zip"
+unzip "${DL_TMP}/inter.zip" -d "${DL_TMP}"
+cp "${DL_TMP}"/InterVar*.ttf "${TMP}"
 
 wget -q --show-progress https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/variable/Montserrat-Italic%5Bwght%5D.ttf -qO "${TMP}/Montserrat-Italic.ttf"
 wget -q --show-progress https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/variable/Montserrat%5Bwght%5D.ttf -qO "${TMP}/Montserrat.ttf"
