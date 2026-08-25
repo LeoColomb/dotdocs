@@ -2,7 +2,7 @@
 
 [package]
 name = "lettre-fr"
-version = "1.0.6"
+version = "1.0.7"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"
@@ -18,4 +18,4 @@ exclude = [ "tests" ]
 [template]
 path = "template"
 entrypoint = "main.typ"
-thumbnail = ""
+thumbnail = "thumbnail.svg"
