@@ -40,7 +40,7 @@
     lang: "fr",
     region: "fr",
     size: 9.9pt,
-    font: "Source Sans Pro",
+    font: "SourceSans3VF",
   )
   set page(
     header: logo(),
