@@ -40,6 +40,7 @@
       "locl",
       "ss03",
     ),
+    size: 10.5pt,
     lang: "fr",
     region: "fr",
   )
@@ -63,7 +64,7 @@
   // text to keep the same spacing.
   if date != none {
     pad(
-      left: 9cm,
+      left: 8cm,
       [
         Fait à #location, le #display-date(date)
       ],
@@ -79,7 +80,7 @@
     pad(right: 10%, [Objet~: ] + strong(subject))
   }
 
-  v(3em)
+  v(2em)
 
   h(1cm)
   opening
