@@ -1,4 +1,4 @@
-#import "@local/lettre-fr:1.0.9": template
+#import "@local/lettre-fr:1.0.10": template
 
 #show: template.with(
   sender: "Jean Dupond",

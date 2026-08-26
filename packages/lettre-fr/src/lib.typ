@@ -32,17 +32,21 @@
     margin: (x: 2cm, y: 2.81cm),
   )
   set text(
-    font: "Inter",
-    features: (
-      "cv05",
-      "cv11",
-      "dlig",
-      "locl",
-      "ss03",
-    ),
-    size: 10.5pt,
     lang: "fr",
     region: "fr",
+    font: "Inter",
+    ligatures: true, // liga, clig
+    discretionary-ligatures: true, // dlig
+    historical-ligatures: true, // hlig
+    kerning: true, // kern
+    stylistic-set: (3), // ssXY
+    features: (
+      "cv03",
+      "cv05",
+      "cv11",
+      "locl",
+    ),
+    size: 10.5pt,
   )
 
   columns(2, gutter: 2cm)[

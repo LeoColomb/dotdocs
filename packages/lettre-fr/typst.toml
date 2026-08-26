@@ -2,7 +2,7 @@
 
 [package]
 name = "lettre-fr"
-version = "1.0.9"
+version = "1.0.10"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"
