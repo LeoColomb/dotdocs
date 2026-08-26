@@ -40,14 +40,15 @@
     lang: "fr",
     region: "fr",
     font: "SourceSans3VF",
+    ligatures: true, // liga, clig
+    discretionary-ligatures: true, // dlig
+    historical-ligatures: true, // hlig
+    kerning: true, // kern
+    stylistic-set: (3), // ssXY
     features: (
       "cv01",
       "cv02",
       "cv03",
-      "dlig",
-      "hlig",
-      "kern",
-      "liga",
     ),
     size: 9.9pt,
   )

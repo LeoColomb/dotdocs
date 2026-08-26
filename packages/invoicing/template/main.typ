@@ -1,4 +1,4 @@
-#import "@local/invoicing:1.0.5": template
+#import "@local/invoicing:1.0.6": template
 
 #show: template.with(
   name: "Jean Dupond",
