@@ -6,7 +6,7 @@
   details: [
     Le mardi 9 juin 1970 à 18 h \
     Place du village
-  ]
+  ],
 )
 
 #lorem(20)

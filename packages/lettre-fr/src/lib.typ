@@ -39,7 +39,7 @@
     discretionary-ligatures: true, // dlig
     historical-ligatures: true, // hlig
     kerning: true, // kern
-    stylistic-set: (3), // ssXY
+    stylistic-set: 3, // ssXY
     features: (
       "cv03",
       "cv05",

@@ -7,7 +7,7 @@
   details: none,
   font-size: 18pt,
   copyright: [CS-31-GOB/LUB/COL • © SDC 31 Avenue des Gobelins-13e],
-  body
+  body,
 ) = {
   set text(
     lang: "fr",
@@ -34,7 +34,7 @@
           dy: 40pt,
           upper[
             #copyright •  #datetime.today().display("[month]/[year]") • v#version(v)
-          ]
+          ],
         )
       ]
     ],
@@ -68,18 +68,16 @@
       ),
       spacing: 3em,
       title: intent,
-      details
-    )    
+      details,
+    )
   }
 
   body
 
-  align(right,
-    block(
-      spacing: 60pt,
-      [
-        Le Conseil syndical
-      ]
-    )
-  )
+  align(right, block(
+    spacing: 60pt,
+    [
+      Le Conseil syndical
+    ],
+  ))
 }
