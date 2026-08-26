@@ -39,8 +39,17 @@
   set text(
     lang: "fr",
     region: "fr",
-    size: 9.9pt,
     font: "SourceSans3VF",
+    features: (
+      "cv01",
+      "cv02",
+      "cv03",
+      "dlig",
+      "hlig",
+      "kern",
+      "liga",
+    ),
+    size: 9.9pt,
   )
   set page(
     header: logo(),
