@@ -1,8 +1,8 @@
 # https://github.com/typst/packages
 
 [package]
-name = "copropriete-affiche"
-version = "2.0.1"
+name = "copropriete-avis"
+version = "1.1.0"
 entrypoint = "src/lib.typ"
 authors = [ "Léo Colombaro <@LeoColomb>" ]
 license = "MIT"

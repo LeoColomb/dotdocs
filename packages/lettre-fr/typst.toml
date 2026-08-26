@@ -6,14 +6,18 @@ version = "1.0.10"
 entrypoint = "src/lib.typ"
 # renovate: image=ghcr.io/typst/typst
 compiler = "0.15.1"
-authors = [ "Léo Colombaro <@LeoColomb>" ]
+authors = ["Léo Colombaro <@LeoColomb>"]
 license = "MIT"
 description = "Normée AFNOR NF Z 11-001"
 repository = "https://github.com/LeoColomb/dotdocs"
 keywords = [ ]
-categories = [ "office" ]
+categories = [
+  "office",
+]
 disciplines = [ ]
-exclude = [ "tests" ]
+exclude = [
+  "tests",
+]
 
 [template]
 path = "template"
