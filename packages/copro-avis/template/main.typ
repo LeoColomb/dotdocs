@@ -1,4 +1,4 @@
-#import "@local/copropriete-affiche:1.1.0": template
+#import "@local/copropriete-avis:1.1.0": template
 
 #show: template.with(
   title: "Avis aux avisés",
