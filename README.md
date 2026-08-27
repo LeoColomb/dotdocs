@@ -2,19 +2,17 @@
 
 > 📄 Paper documents templates
 
+## Usage
+
+* See [Typst](https://typst.app/)
+
 ## Getting Started
 
 ### Files
 
-* `assets/fonts`: Fonts (`TYPST_FONT_PATHS`)
-* `packages/**`: Packages (https://github.com/typst/packages)
-
-## Usage
-
-### Direct
-
 ```console
-typst compile src/main.typ dist/main.pdf
+scripts/packages @local
+scripts/fonts
 ```
 
 ### Container
@@ -31,15 +29,13 @@ docker run --rm \
 
 ## Acknowledgments
 
-### Software
-
-* [Typst](https://typst.app/)
-
 ### Fonts
 
 * [The Bold Font](https://www.dafont.com/the-bold-font.font)
-* [Source Sans Pro](https://adobe-fonts.github.io/source-sans/)
+* [Source Sans](https://adobe-fonts.github.io/source-sans/)
 * [IBM Plex Sans](https://www.ibm.com/plex/)
+* [Inter](https://rsms.me/inter/)
+* [Montserrat](https://github.com/JulietaUla/Montserrat)
 
 ## License
 
