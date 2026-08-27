@@ -4,7 +4,7 @@
 
 ## Usage
 
-* See [Typst](https://typst.app/)
+See [Typst](https://typst.app/)
 
 ## Getting Started
 
