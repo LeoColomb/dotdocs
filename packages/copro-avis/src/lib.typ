@@ -7,6 +7,7 @@
   details: none,
   font-size: 18pt,
   copyright: [CS-31-GOB/LUB/COL • © SDC 31 Avenue des Gobelins-13e],
+  author: [Le Conseil syndical],
   body,
 ) = {
   set text(
@@ -19,7 +20,7 @@
   )
   set page(
     "a4",
-    header: context [= #title],
+    header: if title != none { context [= #title] },
     header-ascent: -30%,
     margin: (top: 200pt),
     footer: context [
@@ -74,10 +75,10 @@
 
   body
 
-  align(right, block(
-    spacing: 60pt,
-    [
-      Le Conseil syndical
-    ],
-  ))
+  if author != none {
+    align(right, block(
+      spacing: 60pt,
+      author
+    ))
+  }
 }
