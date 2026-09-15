@@ -20,7 +20,9 @@
   )
   set page(
     "a4",
-    header: if title != none { context [= #title] },
+    header: if title != none {
+      context [= #title]
+    },
     header-ascent: -30%,
     margin: (top: 200pt),
     footer: context [
